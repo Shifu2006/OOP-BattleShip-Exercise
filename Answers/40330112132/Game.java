@@ -58,7 +58,7 @@ public class Game{
             row--;
         }
         row = holdRow;
-        while(row+1 < 10 && opponentGrid[row+1][col] == 'S'){
+        while(row+1 < trackingGrid.length && opponentGrid[row+1][col] == 'S'){
             shipSize++;
             horizontal = false;
             if(trackingGrid[row+1][col] != 'X'){
@@ -77,7 +77,7 @@ public class Game{
             col--;
         }
         col = holdCol;
-        while(col+1 < 10 && opponentGrid[row][col+1] == 'S'){
+        while(col+1 < trackingGrid.length && opponentGrid[row][col+1] == 'S'){
             shipSize++;
             if(trackingGrid[row][col+1] != 'X'){
                 return false;
@@ -90,7 +90,7 @@ public class Game{
         if(horizontal){
             for (int i = -1; i < shipSize + 1; i++) {
                 for (int j = -1; j < 2; j++) {
-                    if(row + j >= 0 && row + j < 10 && col + i >= 0 && col + i < 10){
+                    if(row + j >= 0 && row + j < trackingGrid.length && col + i >= 0 && col + i < trackingGrid.length){
                         if(trackingGrid[row + j][col + i] == '~'){
                             trackingGrid[row + j][col + i] = 'O';
                         }
@@ -101,7 +101,7 @@ public class Game{
         else{
             for (int i = -1; i < 2; i++) {
                 for (int j = -1; j < shipSize + 1; j++) {
-                    if(row + j >= 0 && row + j < 10 && col + i >= 0 && col + i < 10){
+                    if(row + j >= 0 && row + j < trackingGrid.length && col + i >= 0 && col + i < trackingGrid.length){
                         if(trackingGrid[row + j][col + i] == '~'){
                             trackingGrid[row + j][col + i] = 'O';
                         }
