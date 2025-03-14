@@ -21,16 +21,6 @@ public class Game{
         return n;
     }
 
-    public static void placeShipRandomly(Board board, Ship ship) {
-        boolean placed = false;
-        boolean horizontal = rand.nextBoolean();
-        while (!placed) {
-            int row = rand.nextInt(board.getSize());
-            int col = rand.nextInt(board.getSize());
-            placed = board.placeShip(ship, row, col, horizontal);
-        }
-    }
-
     static boolean allShipsSunk(char[][] opponentGrid, char[][] trackingGrid) {
         for (int i = 0; i < trackingGrid.length; i++) {
             for (int j = 0; j < trackingGrid.length; j++) {
