@@ -4,7 +4,7 @@ public class Board{
     static Scanner input = new Scanner(System.in);
     static Scanner inputint = new Scanner(System.in);
 
-    private char[][] grid;
+    public char[][] grid;
     private int size;
     
     public Board(int size) {
