@@ -1,4 +1,9 @@
 public class Ship{
-    private int size;
-    private boolean horizontal;
+    public int size;
+    public boolean horizontal;
+
+    public Ship(int size, boolean horizontal){
+        this.size = size;
+        this.horizontal = horizontal;
+    }
 }
