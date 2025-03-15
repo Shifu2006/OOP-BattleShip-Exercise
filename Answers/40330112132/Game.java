@@ -26,7 +26,7 @@ public class Game{
     public static void main(String[] args) {
         boardSize = 10;
         mainMenu();
-
+        System.out.println("bye bye...");
     }
 
     static void playTwoPlayer(){
@@ -208,8 +208,7 @@ public class Game{
                 playMenu();
                 return;
             case 2:
-                optionMenu();
-                mainMenu();
+                optionsMenu();
                 return;
             case 3:
                 return;
@@ -232,9 +231,11 @@ public class Game{
         switch(n){
             case 1:
                 playTwoPlayer();
+                playMenu();
                 return;
             case 2:
                 playWithAI();
+                playMenu();
                 return;
             case 3:
                 mainMenu();
@@ -246,8 +247,8 @@ public class Game{
         }
     }
 
-    public static void optionMenu(){
-        System.out.println("--- Option ---");
+    public static void optionsMenu(){
+        System.out.println("--- Options ---");
         System.out.println("1. Size of the board");
         System.out.println("2. Main menu");
         System.out.print("Enter your choice: ");
@@ -257,13 +258,14 @@ public class Game{
         switch(n){
             case 1:
                 boardSize = utils.askSize();
+                optionsMenu();
                 return;
             case 2:
                 mainMenu();
                 return;
             default:
                 System.out.println("wrong input...");
-                optionMenu();
+                optionsMenu();
                 return;
         }
     }
