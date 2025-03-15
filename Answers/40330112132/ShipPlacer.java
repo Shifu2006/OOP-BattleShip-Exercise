@@ -16,14 +16,14 @@ public class ShipPlacer{
     public void placeShipRandomly(Board board, Ship ship) {
         boolean placed = false;
         boolean horizontal = rand.nextBoolean();
-        int maxattemps = 100;
+        int maxAttemps = board.getSize() * board.getSize();
         int attemps = 0;
         while (!placed) {
             int row = rand.nextInt(board.getSize());
             int col = rand.nextInt(board.getSize());
             placed = board.placeShip(ship, row, col, horizontal);
             attemps++;
-            if(attemps == board.getSize() * board.getSize()){
+            if(attemps == maxAttemps){
                 horizontal = !horizontal;
                 attemps = 0;
             }
@@ -39,7 +39,12 @@ public class ShipPlacer{
             int col = coordinate.col;
             boolean horizontal = utils.isHorizontal();
             placed = board.placeShip(ship, row, col, horizontal);
+            if (!placed){
+                System.out.println("Each ship must be placed at least one cell apart from other ships.");
+                board.printGrid();
+            }
         }
+        board.printGrid();
     }
 
     public boolean askIfRandom(){
@@ -62,22 +67,29 @@ public class ShipPlacer{
     public void setShips(ArrayList<Ship> ships, int boardSize){
         ships.clear();
         if(boardSize < 8){
-            Ship ship = new Ship(2);
-            ships.add(ship);
-            ships.add(ship);
-            ship.size = 3;
-            ships.add(ship);
+            ships.add(new Ship(2));
+            ships.add(new Ship(2));
+            ships.add(new Ship(3));
+            if(boardSize == 7){
+                ships.add(new Ship(3));
+            }
         }
         else{
             boolean isEven = false;
-            Ship ship = new Ship(2);
+            int shipSize = 2;
             while(!(boardSize < 2)){
                 if(isEven){
-                    ship.size += 1;
+                    shipSize += 1;
                 }
                 isEven = !isEven;
-                ships.add(ship);
+                ships.add(new Ship(shipSize));
                 boardSize -= 2;
+            }
+            if(boardSize > 0){
+                if(isEven){
+                    shipSize += 1;
+                }
+                ships.add(new Ship(shipSize));
             }
         }
     }

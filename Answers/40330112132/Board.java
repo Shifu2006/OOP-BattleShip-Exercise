@@ -50,7 +50,7 @@ public class Board{
             }
             for (int i = -1; i < size + 1; i++) {
                 for (int j = -1; j < 2; j++) {
-                    if(row + j >= 0 && row + j < 10 && col + i >= 0 && col + i < 10){
+                    if(row + j >= 0 && row + j < this.size && col + i >= 0 && col + i < this.size){
                         if(grid[row + j][col + i] != '~'){
                             return false;
                         }
@@ -79,7 +79,7 @@ public class Board{
     public void printGrid(){
         System.out.print("   A");
         for (int i = 1; i < this.size; i++) {
-            System.out.print(" " + ('A' + i));
+            System.out.print(" " + (char) ('A' + i));
         }
         System.out.println();
         for (int i = 1; i <= this.size; i++) {

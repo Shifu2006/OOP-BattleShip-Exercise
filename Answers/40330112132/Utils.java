@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Utils{
@@ -126,5 +127,20 @@ public class Utils{
         }
 
         return true;
+    }
+
+    public void rules(ArrayList<Ship> ships){
+        System.out.print("RULES: there are " + ships.size() + " ships with these size: ");
+        boolean isTrue = true;
+        for (Ship ship : ships) {
+            if(isTrue){
+                System.out.print(ship.size);
+                isTrue = !isTrue;
+            }
+            else{
+                System.out.print(", " + ship.size);
+            }
+        }
+        System.out.println(".");
     }
 }

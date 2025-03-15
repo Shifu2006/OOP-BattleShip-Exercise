@@ -1,6 +1,6 @@
 public class Player{
-    Board board;
-    Board trackingBoard;
+    public Board board;
+    public Board trackingBoard;
 
     public Player(int boardSize){
         this.board = new Board(boardSize);

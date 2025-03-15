@@ -37,6 +37,7 @@ public class Game{
         player1.trackingBoard.initializeGrid();
         player2.trackingBoard.initializeGrid();
         shipPlacer.setShips(ships, boardSize);
+        utils.rules(ships);
         System.out.println("Player 1: ");
         if(!shipPlacer.askIfRandom()){
             for(Ship ship : ships){
@@ -44,6 +45,7 @@ public class Game{
             }
         }
         else{
+            player1.board.printGrid();
             for(Ship ship : ships){
                 shipPlacer.userPlaceShip(player1.board, ship);
             }
@@ -55,6 +57,7 @@ public class Game{
             }
         }
         else{
+            player2.board.printGrid();
             for(Ship ship : ships){
                 shipPlacer.userPlaceShip(player2.board, ship);
             }
@@ -147,6 +150,8 @@ public class Game{
                 playMenu();
                 return;
             case 2:
+                optionMenu();
+                mainMenu();
                 return;
             case 3:
                 return;
