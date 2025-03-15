@@ -1,6 +1,6 @@
-import java.util.Scanner;
-import java.util.Random;
 import java.util.ArrayList;
+import java.util.Random;
+import java.util.Scanner;
 
 public class Game{
     static Scanner input = new Scanner(System.in);
@@ -29,7 +29,7 @@ public class Game{
 
     }
 
-    public static void playTwoPlayer(){
+    static void playTwoPlayer(){
         Player player1 = new Player(boardSize);
         Player player2 = new Player(boardSize);
         player1.board.initializeGrid();
@@ -132,11 +132,69 @@ public class Game{
         return false;
     }
 
-    public void playAI(){
-
+    static boolean isGameOverAI(Player player1 , AI ai) {
+        if(utils.allShipsSunk(player1.trackingBoard.grid, ai.board.grid)){
+            System.out.println("Player 1 grid:");
+            player1.board.printGrid();
+            System.out.println("AI grid:");
+            ai.board.printGrid();
+            System.out.println("Player 1 wins!");
+            return true;
+        }
+        else if(utils.allShipsSunk(ai.trackingBoard.grid, player1.board.grid)){
+            System.out.println("Player 1 grid:");
+            player1.board.printGrid();
+            System.out.println("AI grid:");
+            ai.board.printGrid();
+            System.out.println("AI wins!");
+            return true;
+        }
+        return false;
     }
 
-    public static void mainMenu(){
+    public static void playWithAI(){
+        Player player1 = new Player(boardSize);
+        AI ai = new AI(boardSize);
+        player1.board.initializeGrid();
+        ai.board.initializeGrid();
+        player1.trackingBoard.initializeGrid();
+        ai.trackingBoard.initializeGrid();
+        shipPlacer.setShips(ships, boardSize);
+        utils.rules(ships);
+        System.out.println("Player 1: ");
+        if(!shipPlacer.askIfRandom()){
+            for(Ship ship : ships){
+                shipPlacer.placeShipRandomly(player1.board, ship);
+            }
+        }
+        else{
+            player1.board.printGrid();
+            for(Ship ship : ships){
+                shipPlacer.userPlaceShip(player1.board, ship);
+            }
+        }
+        for(Ship ship : ships){
+            shipPlacer.placeShipRandomly(ai.board, ship);
+        }
+
+        boolean player1Turn = true;
+        while (!isGameOverAI(player1, ai)) {
+            if (player1Turn) {
+                System.out.println("Player 1's turn:");
+                player1.trackingBoard.printGrid();
+                playerTurn(ai.board.grid, player1.trackingBoard.grid);
+            } else {
+                System.out.println("AI's turn:");
+                ai.turn(player1.board.grid, ai.trackingBoard.grid);
+                ai.trackingBoard.printGrid();
+            }
+            player1Turn = !player1Turn;
+        }
+
+        System.out.println("Game Over!");
+    }
+
+    static void mainMenu(){
         System.out.println("--- Battle Ship OOP ---");
         System.out.println("1. Play");
         System.out.println("2. Options");
@@ -162,7 +220,7 @@ public class Game{
         }
     }
 
-    public static void playMenu(){
+    static void playMenu(){
         System.out.println("--- Play ---");
         System.out.println("1. Play with a friend");
         System.out.println("2. Play with AI");
@@ -176,6 +234,7 @@ public class Game{
                 playTwoPlayer();
                 return;
             case 2:
+                playWithAI();
                 return;
             case 3:
                 mainMenu();
