@@ -103,7 +103,8 @@ public class Utils{
         if(horizontal){
             for (int i = -1; i < shipSize + 1; i++) {
                 for (int j = -1; j < 2; j++) {
-                    if(row + j >= 0 && row + j < trackingGrid.length && col + i >= 0 && col + i < trackingGrid.length){
+                    if(row + j >= 0 && row + j < trackingGrid.length 
+                    && col + i >= 0 && col + i < trackingGrid.length){
                         if(trackingGrid[row + j][col + i] == '~'){
                             trackingGrid[row + j][col + i] = 'O';
                         }
@@ -114,7 +115,8 @@ public class Utils{
         else{
             for (int i = -1; i < 2; i++) {
                 for (int j = -1; j < shipSize + 1; j++) {
-                    if(row + j >= 0 && row + j < trackingGrid.length && col + i >= 0 && col + i < trackingGrid.length){
+                    if(row + j >= 0 && row + j < trackingGrid.length 
+                    && col + i >= 0 && col + i < trackingGrid.length){
                         if(trackingGrid[row + j][col + i] == '~'){
                             trackingGrid[row + j][col + i] = 'O';
                         }
