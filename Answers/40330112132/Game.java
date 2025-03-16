@@ -207,9 +207,8 @@ public class Game{
         System.out.println("1. Play");
         System.out.println("2. Options");
         System.out.println("3. Quit game");
-        System.out.print("Enter your choice: ");
 
-        int n = input2.nextInt();
+        int n = utils.getChoice();
 
         switch(n){
             case 1:
@@ -232,9 +231,8 @@ public class Game{
         System.out.println("1. Play with a friend");
         System.out.println("2. Play with AI");
         System.out.println("3. Main menu");
-        System.out.print("Enter your choice: ");
 
-        int n = input2.nextInt();
+        int n = utils.getChoice();
 
         switch(n){
             case 1:
@@ -260,9 +258,8 @@ public class Game{
         System.out.println("1. Size of the board");
         System.out.println("2. Names");
         System.out.println("3. Main menu");
-        System.out.print("Enter your choice: ");
 
-        int n = input2.nextInt();
+        int n = utils.getChoice();
 
         switch(n){
             case 1:
@@ -287,9 +284,8 @@ public class Game{
         System.out.println("2. Player 2, current: " + player2Name);
         System.out.println("3. AI, current: " + aiName);
         System.out.println("4. Options");
-        System.out.print("Enter your choice: ");
 
-        int n = input2.nextInt();
+        int n = utils.getChoice();
 
         switch(n){
             case 1:

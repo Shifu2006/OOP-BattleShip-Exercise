@@ -59,4 +59,19 @@ public class Utils{
         }
         System.out.println(".");
     }
+
+    public int getChoice(){
+        System.out.print("Enter your choice: ");
+        String inputS = input.nextLine();
+        while(true){
+            if(inputS.length() != 1 || inputS.charAt(0) < '1' || inputS.charAt(0) > '9'){
+                System.out.println("wrong input!");
+                System.out.print("Enter your choice: ");
+                inputS = input.nextLine();
+            }
+            else{
+                return inputS.charAt(0) - '0';
+            }
+        }
+    }
 }
