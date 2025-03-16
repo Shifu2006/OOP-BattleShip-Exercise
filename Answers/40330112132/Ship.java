@@ -1,5 +1,6 @@
 public class Ship{
     public int size;
+    
     public Ship(int size){
         this.size = size;
     }
@@ -12,6 +13,7 @@ public class Ship{
                 }
             }
         }
+        
         return true;
     }
 
@@ -21,6 +23,7 @@ public class Ship{
         int shipSize = 1;
         int holdRow2 = row;
         int holdCol2 = col;
+        
         while(row-1 >= 0 && opponentGrid[row-1][col] == 'S'){
             shipSize++;
             holdRow2--;
@@ -31,6 +34,7 @@ public class Ship{
             row--;
         }
         row = holdRow;
+        
         while(row+1 < trackingGrid.length && opponentGrid[row+1][col] == 'S'){
             shipSize++;
             horizontal = false;
@@ -39,8 +43,8 @@ public class Ship{
             }
             row++;
         }
-
         int holdCol = col;
+        
         while(col-1 >= 0 && opponentGrid[row][col-1] == 'S'){
             shipSize++;
             holdCol2--;
@@ -50,6 +54,7 @@ public class Ship{
             col--;
         }
         col = holdCol;
+        
         while(col+1 < trackingGrid.length && opponentGrid[row][col+1] == 'S'){
             shipSize++;
             if(trackingGrid[row][col+1] != 'X'){
@@ -87,4 +92,5 @@ public class Ship{
 
         return true;
     }
+
 }

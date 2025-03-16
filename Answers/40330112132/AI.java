@@ -8,7 +8,6 @@ public class AI extends Player {
     private boolean horizontal;
 
     static Random rand = new Random();
-    static Utils utils = new Utils();
     static Ship ship0 = new Ship(0);
     
     public AI(int size, String name) {

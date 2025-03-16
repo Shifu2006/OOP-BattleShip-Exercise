@@ -5,13 +5,8 @@ import java.util.ArrayList;
 public class ShipPlacer{
     static Random rand = new Random();
     static Scanner input = new Scanner(System.in);
-    static Scanner input2 = new Scanner(System.in);
     static Coordinate coordinate = new Coordinate();
     static Utils utils = new Utils();
-
-    public ShipPlacer(){
-
-    }
 
     public void placeShipRandomly(Board board, Ship ship) {
         boolean placed = false;
@@ -93,4 +88,5 @@ public class ShipPlacer{
             }
         }
     }
+
 }

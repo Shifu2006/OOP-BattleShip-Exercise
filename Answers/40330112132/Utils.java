@@ -2,10 +2,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Utils{
-
     Scanner input = new Scanner(System.in);
     Scanner input2 = new Scanner(System.in);
-
 
     public boolean isValidCoordinate(String inputS, int boardSize) {
         if (inputS.length() != 2 && inputS.length() != 3) return false;
@@ -72,4 +70,5 @@ public class Utils{
             }
         }
     }
+
 }

@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Game{
     static Scanner input = new Scanner(System.in);
-    static Scanner input2 = new Scanner(System.in);
     static Random rand = new Random();
     static Utils utils = new Utils();
     static ShipPlacer shipPlacer = new ShipPlacer();
@@ -92,7 +91,6 @@ public class Game{
         if(!coordinate.getCoordinateForGame(opponentGrid.length)) {
             System.out.println("Invalid input. Don't do this again.");
             System.out.println();
-            return;
         }
         else{
             int col = coordinate.col;
@@ -223,7 +221,6 @@ public class Game{
             default:
                 System.out.println("wrong input...");
                 mainMenu();
-                return;
         }
     }
 
@@ -250,7 +247,6 @@ public class Game{
             default:
                 System.out.println("wrong input...");
                 playMenu();
-                return;
         }
     }
 
@@ -275,7 +271,6 @@ public class Game{
             default:
                 System.out.println("wrong input...");
                 optionsMenu();
-                return;
         }
     }
 
@@ -328,9 +323,7 @@ public class Game{
             default:
                 System.out.println("wrong input...");
                 namesMenu();
-                return;
         }
     }
 
-    
 }

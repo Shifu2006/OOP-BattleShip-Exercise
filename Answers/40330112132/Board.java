@@ -1,9 +1,4 @@
-import java.util.Scanner;
-
 public class Board{
-    static Scanner input = new Scanner(System.in);
-    static Scanner inputint = new Scanner(System.in);
-
     public char[][] grid;
     private int size;
     
@@ -96,4 +91,5 @@ public class Board{
         }
         System.out.println();
     }
+
 }

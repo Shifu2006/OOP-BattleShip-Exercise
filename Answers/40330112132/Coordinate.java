@@ -39,7 +39,8 @@ public class Coordinate{
             }
             this.row -= 1;
         }
+        
         return true;
-
     }
+
 }
