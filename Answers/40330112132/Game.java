@@ -220,11 +220,13 @@ public class Game{
                 return;
             default:
                 System.out.println("wrong input...");
+                System.out.println();
                 mainMenu();
         }
     }
 
     static void playMenu(){
+        System.out.println();
         System.out.println("--- Play ---");
         System.out.println("1. Play with a friend");
         System.out.println("2. Play with AI");
@@ -242,6 +244,7 @@ public class Game{
                 playMenu();
                 return;
             case 3:
+                System.out.println();
                 mainMenu();
                 return;
             default:
@@ -251,6 +254,7 @@ public class Game{
     }
 
     public static void optionsMenu(){
+        System.out.println();
         System.out.println("--- Options ---");
         System.out.println("1. Size of the board, current: " + boardSize);
         System.out.println("2. Names");
@@ -267,6 +271,7 @@ public class Game{
                 namesMenu();
                 return;
             case 3:
+                System.out.println();
                 mainMenu();
                 return;
             default:
@@ -276,6 +281,7 @@ public class Game{
     }
 
     public static void namesMenu(){
+        System.out.println();
         System.out.println("--- Names ---");
         System.out.println("1. Player 1, current: " + player1Name);
         System.out.println("2. Player 2, current: " + player2Name);
