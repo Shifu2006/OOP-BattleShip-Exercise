@@ -65,9 +65,7 @@ public class Utils{
         String inputS = input.nextLine();
         while(true){
             if(inputS.length() != 1 || inputS.charAt(0) < '1' || inputS.charAt(0) > '9'){
-                System.out.println("wrong input!");
-                System.out.print("Enter your choice: ");
-                inputS = input.nextLine();
+                return 0;
             }
             else{
                 return inputS.charAt(0) - '0';
