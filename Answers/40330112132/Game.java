@@ -252,7 +252,7 @@ public class Game{
 
     public static void optionsMenu(){
         System.out.println("--- Options ---");
-        System.out.println("1. Size of the board");
+        System.out.println("1. Size of the board, current: " + boardSize);
         System.out.println("2. Names");
         System.out.println("3. back to main menu");
 
