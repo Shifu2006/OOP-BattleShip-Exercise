@@ -7,4 +7,14 @@ public class Player{
         this.board = new Board(boardSize);
         this.trackingBoard = new Board(boardSize);
     }
+
+    public static boolean isValidName(String name){
+        if(name.length() < 0){
+            return false;
+        }
+        if(name.isBlank()){
+            return false;
+        }
+        return true;
+    }
 }

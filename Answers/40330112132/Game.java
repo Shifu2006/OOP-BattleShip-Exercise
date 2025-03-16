@@ -258,7 +258,8 @@ public class Game{
     public static void optionsMenu(){
         System.out.println("--- Options ---");
         System.out.println("1. Size of the board");
-        System.out.println("2. Main menu");
+        System.out.println("2. Names");
+        System.out.println("3. Main menu");
         System.out.print("Enter your choice: ");
 
         int n = input2.nextInt();
@@ -269,11 +270,67 @@ public class Game{
                 optionsMenu();
                 return;
             case 2:
+                namesMenu();
+            case 3:
                 mainMenu();
                 return;
             default:
                 System.out.println("wrong input...");
                 optionsMenu();
+                return;
+        }
+    }
+
+    public static void namesMenu(){
+        System.out.println("--- Names ---");
+        System.out.println("1. Player 1, current: " + player1Name);
+        System.out.println("2. Player 2, current: " + player2Name);
+        System.out.println("3. AI, current: " + aiName);
+        System.out.println("4. Options");
+        System.out.print("Enter your choice: ");
+
+        int n = input2.nextInt();
+
+        switch(n){
+            case 1:
+                System.out.print("Enter new name for Player 1: ");
+                String holdName = input.nextLine();
+                while(!Player.isValidName(holdName)){
+                    System.out.println("Invalid name. Try again.");
+                    System.out.print("Enter new name for Player 1: ");
+                    holdName = input.nextLine();
+                }
+                player1Name = holdName;
+                namesMenu();
+                return;
+            case 2:
+                System.out.print("Enter new name for Player 2: ");
+                holdName = input.nextLine();
+                while(!Player.isValidName(holdName)){
+                    System.out.println("Invalid name. Try again.");
+                    System.out.print("Enter new name for Player 2: ");
+                    holdName = input.nextLine();
+                }
+                player2Name = holdName;
+                namesMenu();
+                return;
+            case 3:
+                System.out.print("Enter new name for AI: ");
+                holdName = input.nextLine();
+                while(!Player.isValidName(holdName)){
+                    System.out.println("Invalid name. Try again.");
+                    System.out.print("Enter new name for AI: ");
+                    holdName = input.nextLine();
+                }
+                aiName = holdName;
+                namesMenu();
+                return;
+            case 4:
+                optionsMenu();
+                return;
+            default:
+                System.out.println("wrong input...");
+                namesMenu();
                 return;
         }
     }
