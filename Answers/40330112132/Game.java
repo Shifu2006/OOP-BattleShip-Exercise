@@ -91,6 +91,7 @@ public class Game{
     static void playerTurn(char[][] opponentGrid, char[][] trackingGrid) {
         if(!coordinate.getCoordinateForGame(opponentGrid.length)) {
             System.out.println("Invalid input. Don't do this again.");
+            System.out.println();
             return;
         }
         else{
@@ -230,7 +231,7 @@ public class Game{
         System.out.println("--- Play ---");
         System.out.println("1. Play with a friend");
         System.out.println("2. Play with AI");
-        System.out.println("3. Main menu");
+        System.out.println("3. Back to main menu");
 
         int n = utils.getChoice();
 
@@ -257,7 +258,7 @@ public class Game{
         System.out.println("--- Options ---");
         System.out.println("1. Size of the board");
         System.out.println("2. Names");
-        System.out.println("3. Main menu");
+        System.out.println("3. back to main menu");
 
         int n = utils.getChoice();
 
@@ -283,7 +284,7 @@ public class Game{
         System.out.println("1. Player 1, current: " + player1Name);
         System.out.println("2. Player 2, current: " + player2Name);
         System.out.println("3. AI, current: " + aiName);
-        System.out.println("4. Options");
+        System.out.println("4. Back to options");
 
         int n = utils.getChoice();
 

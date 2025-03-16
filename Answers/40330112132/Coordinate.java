@@ -10,6 +10,7 @@ public class Coordinate{
     public void getCoordinateForPlace(int boardSize){
         System.out.print("Enter a location to place (for example A6): ");
         String inputS = input.nextLine();
+        inputS = inputS.toUpperCase();
         while(!utils.isValidCoordinate(inputS, boardSize)){
             System.out.println("wrong input!");
             System.out.print("Enter a location to place (for example A6): ");
@@ -26,6 +27,7 @@ public class Coordinate{
     public boolean getCoordinateForGame(int boardSize){
         System.out.print("Enter a target location (for example A6): ");
         String inputS = input.nextLine();
+        inputS = inputS.toUpperCase();
         if(!utils.isValidCoordinate(inputS, boardSize)){
             return false;
         }
