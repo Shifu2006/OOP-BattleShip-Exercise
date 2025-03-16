@@ -30,8 +30,8 @@ public class Game{
 
     public static void main(String[] args) {
         boardSize = 10;
-        player1Name = "Player 1";
-        player2Name = "Player 2";
+        player1Name = "Player1";
+        player2Name = "Player2";
         aiName = "AI";
         mainMenu();
         System.out.println("bye bye...");
