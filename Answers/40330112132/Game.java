@@ -9,6 +9,7 @@ public class Game{
     static Utils utils = new Utils();
     static ShipPlacer shipPlacer = new ShipPlacer();
     static Coordinate coordinate = new Coordinate();
+    static Ship ship = new Ship(0);
     static int boardSize;
     public static ArrayList<Ship> ships = new ArrayList<>();
 
@@ -94,7 +95,7 @@ public class Game{
                     return;
                 }
                 trackingGrid[row][col] = 'X';
-                if(utils.shipSunk(opponentGrid, trackingGrid, row, col)){
+                if(ship.shipSunk(opponentGrid, trackingGrid, row, col)){
                     System.out.println("You sunk a ship!");
                 }
                 else{
@@ -113,7 +114,7 @@ public class Game{
     }
 
     static boolean isGameOver(Player player1 , Player player2) {
-        if(utils.allShipsSunk(player1.trackingBoard.grid, player2.board.grid)){
+        if(ship.allShipsSunk(player1.trackingBoard.grid, player2.board.grid)){
             System.out.println("Player 1 grid:");
             player1.board.printGrid();
             System.out.println("Player 2 grid:");
@@ -121,7 +122,7 @@ public class Game{
             System.out.println("Player 1 wins!");
             return true;
         }
-        else if(utils.allShipsSunk(player2.trackingBoard.grid, player1.board.grid)){
+        else if(ship.allShipsSunk(player2.trackingBoard.grid, player1.board.grid)){
             System.out.println("Player 1 grid:");
             player1.board.printGrid();
             System.out.println("Player 2 grid:");
@@ -133,7 +134,7 @@ public class Game{
     }
 
     static boolean isGameOverAI(Player player1 , AI ai) {
-        if(utils.allShipsSunk(player1.trackingBoard.grid, ai.board.grid)){
+        if(ship.allShipsSunk(player1.trackingBoard.grid, ai.board.grid)){
             System.out.println("Player 1 grid:");
             player1.board.printGrid();
             System.out.println("AI grid:");
@@ -141,7 +142,7 @@ public class Game{
             System.out.println("Player 1 wins!");
             return true;
         }
-        else if(utils.allShipsSunk(ai.trackingBoard.grid, player1.board.grid)){
+        else if(ship.allShipsSunk(ai.trackingBoard.grid, player1.board.grid)){
             System.out.println("Player 1 grid:");
             player1.board.printGrid();
             System.out.println("AI grid:");

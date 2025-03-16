@@ -9,6 +9,7 @@ public class AI extends Player {
 
     static Random rand = new Random();
     static Utils utils = new Utils();
+    static Ship ship = new Ship(0);
     
     public AI(int size) {
         super(size);
@@ -172,7 +173,7 @@ public class AI extends Player {
     public void hitOrMiss(char[][] opponentGrid, char[][] trackingGrid, int row2, int col2) {
         if(opponentGrid[row2][col2] == 'S'){
             trackingGrid[row2][col2] = 'X';
-            if(utils.shipSunk(opponentGrid, trackingGrid, row2, col2)){
+            if(ship.shipSunk(opponentGrid, trackingGrid, row2, col2)){
                 System.out.println("AI chose " + (char)(col2 + 'A') + (row2 + 1) + " and sunk a ship!");
                 this.lookingForShip = false;
             }
