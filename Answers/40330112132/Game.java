@@ -265,6 +265,7 @@ public class Game{
                 return;
             case 2:
                 namesMenu();
+                return;
             case 3:
                 mainMenu();
                 return;
