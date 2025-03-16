@@ -9,10 +9,7 @@ public class Player{
     }
 
     public static boolean isValidName(String name){
-        if(name.length() < 0){
-            return false;
-        }
-        if(name.isBlank()){
+        if(name.length() < 0 || name.isBlank()){
             return false;
         }
         return true;
