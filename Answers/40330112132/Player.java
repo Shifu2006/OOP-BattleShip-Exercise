@@ -18,7 +18,7 @@ public class Player{
             return false;
         }
         for(int i = 0; i < name.length(); i++){
-            if(!Character.isLetter(name.charAt(i)) || !Character.isDigit(name.charAt(i))){
+            if(!Character.isLetter(name.charAt(i)) && !Character.isDigit(name.charAt(i))){
                 System.out.println("Name can only contain letters and numbers!");
                 return false;
             }
