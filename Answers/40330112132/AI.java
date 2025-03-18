@@ -28,7 +28,7 @@ public class AI extends Player {
                                 if(col + n >= trackingGrid.length || trackingGrid[row][col + n] == 'O'){
                                     break;
                                 }
-                                if(col + n < trackingGrid.length && trackingGrid[row][col + n] == '~'){
+                                if(trackingGrid[row][col + n] == '~'){
                                     hitOrMiss(opponentGrid, trackingGrid, row, col + n);
                                     this.horizontal = true;
                                     return;
@@ -42,7 +42,7 @@ public class AI extends Player {
                                 if(col + n < 0 || trackingGrid[row][col + n] == 'O'){
                                     break;
                                 }
-                                if(col + n > 0 && trackingGrid[row][col + n] == '~'){
+                                if(trackingGrid[row][col + n] == '~'){
                                     hitOrMiss(opponentGrid, trackingGrid, row, col + n);
                                     this.horizontal = true;
                                     return;
@@ -60,7 +60,7 @@ public class AI extends Player {
                                 if(row + n >= trackingGrid.length || trackingGrid[row + n][col] == 'O'){
                                     break;
                                 }
-                                if(row + n < trackingGrid.length && trackingGrid[row + n][col] == '~'){
+                                if(trackingGrid[row + n][col] == '~'){
                                     hitOrMiss(opponentGrid, trackingGrid, row + n, col);
                                     this.horizontal = false;
                                     return;
@@ -74,7 +74,7 @@ public class AI extends Player {
                                 if(row + n < 0 || trackingGrid[row + n][col] == 'O'){
                                     break;
                                 }
-                                if(row + n > 0 && trackingGrid[row + n][col] == '~'){
+                                if(trackingGrid[row + n][col] == '~'){
                                     hitOrMiss(opponentGrid, trackingGrid, row + n, col);
                                     this.horizontal = false;
                                     return;
@@ -98,7 +98,7 @@ public class AI extends Player {
                                 if(col + n >= trackingGrid.length || trackingGrid[row][col + n] == 'O'){
                                     break;
                                 }
-                                if(col + n < trackingGrid.length && trackingGrid[row][col + n] == '~'){
+                                if(trackingGrid[row][col + n] == '~'){
                                     hitOrMiss(opponentGrid, trackingGrid, row, col + n);
                                     this.horizontal = true;
                                     return;
@@ -113,7 +113,7 @@ public class AI extends Player {
                                 if(col + n < 0 || trackingGrid[row][col + n] == 'O'){
                                     break;
                                 }
-                                if(col + n > 0 && trackingGrid[row][col + n] == '~'){
+                                if(trackingGrid[row][col + n] == '~'){
                                     hitOrMiss(opponentGrid, trackingGrid, row, col + n);
                                     this.horizontal = true;
                                     return;
@@ -130,7 +130,7 @@ public class AI extends Player {
                                 if(row + n >= trackingGrid.length || trackingGrid[row + n][col] == 'O'){
                                     break;
                                 }
-                                if(row + n < trackingGrid.length && trackingGrid[row + n][col] == '~'){
+                                if(trackingGrid[row + n][col] == '~'){
                                     hitOrMiss(opponentGrid, trackingGrid, row + n, col);
                                     this.horizontal = false;
                                     return;
@@ -145,7 +145,7 @@ public class AI extends Player {
                                 if(row + n < 0 || trackingGrid[row + n][col] == 'O'){
                                     break;
                                 }
-                                if(row + n > 0 && trackingGrid[row + n][col] == '~'){
+                                if(trackingGrid[row + n][col] == '~'){
                                     hitOrMiss(opponentGrid, trackingGrid, row + n, col);
                                     this.horizontal = false;
                                     return;
