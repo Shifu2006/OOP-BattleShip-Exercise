@@ -35,7 +35,7 @@ public class Utils{
 
     public int askSize(){
         System.out.print("enter size of boards(6 - 26): ");
-        int n = getChoice();
+        int n = getNumber();
         if(n < 6 || n > 26){
             System.out.println("wrong input...");
             return askSize();
@@ -71,4 +71,17 @@ public class Utils{
         }
     }
 
+    public int getNumber(){
+        System.out.print("Enter your choice: ");
+        String inputS = input.nextLine();
+        int n = 0;
+        for(int i = 0; i < inputS.length(); i++){
+            if(inputS.charAt(i) < '0' || inputS.charAt(i) > '9'){
+                return 0;
+            }
+            n = n * 10 + (inputS.charAt(i) - '0');
+        }
+
+        return n;
+    }
 }
